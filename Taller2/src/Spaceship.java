@@ -77,12 +77,11 @@ public abstract class Spaceship {
      */
     public abstract void menu();
 
-   /**
+    /**
      * Método abstracto que asigna una misión a la nave espacial.
-    * @param num Opción del menú de misiones elegida por el usuario.
-    * @return Misión que va a realizar la nave espacial.
-    */
-    public abstract String mission(int num);
+     * @param num Opción del menú de misiones elegida por el usuario.
+     */
+    public abstract void mission(int num);
 
     /**
      * Devueleve la misión que se le asigna al vehículo lanzadera.

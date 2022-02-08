@@ -31,7 +31,7 @@ public class UnmannedSpaceships extends Spaceship {
     @Override
     public String functioning() {
         String ship = "La nave espacial es una nave no tripulada que funciona con " + super.getFuel() + " como combustible, "
-                   + "tiene una potencia de " + super.getPower() + " y alcanza una velocida máxima de " + super.getSpeed() + "km/h.";
+                   + "tiene una potencia de " + super.getPower() + " y alcanza una velocida máxima de " + super.getSpeed() + " km/h.";
         return ship;
     }
 
@@ -40,7 +40,7 @@ public class UnmannedSpaceships extends Spaceship {
      */
     @Override
     public void menu() {
-        String menu = "Seleccione la misión que va a realizar la nave no tripulada\n"
+        String menu = "\nSeleccione la misión que va a realizar la nave no tripulada\n"
         + "1. Exploración de Saturno y sus lunas\n"
         + "2. Exploración de Júpiter\n"
         + "3. Exploración de Marte\n"
@@ -55,7 +55,7 @@ public class UnmannedSpaceships extends Spaceship {
      * Método abtracto sobreescrito de la clase Spaceship, asigna la misión de la nave.
      */ 
     @Override
-    public String mission(int num) {
+    public void mission(int num) {
         String option = "";
         if(num == 1){
             option = "Exploración de Saturno y sus lunas";
@@ -73,7 +73,7 @@ public class UnmannedSpaceships extends Spaceship {
             option = "Misión no asignada";
         }
 
-        return option;
+        this.mission = option;
     }
 
     /**
@@ -89,7 +89,7 @@ public class UnmannedSpaceships extends Spaceship {
      */   
     @Override
     public String finalReport() {
-        String report = "Nave " + super.getName() + "\n"
+        String report = "Nave: " + super.getName() + "\n"
                         + "Funcionalidad: " + this.functioning() + "\n"
                         + "Misión: " + this.getMission() + "\n"
                         + "Lanzadera: La nave será impulsada por la lanzadera " + this.shuttle.getName();

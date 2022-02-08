@@ -25,7 +25,7 @@ public class ShuttleVehicles extends Spaceship {
     @Override
     public String functioning() {
         String ship = "La nave espacial es un vehículo lanzadera que funciona con " + super.getFuel() + " como combustible, "
-                   + "tiene una potencia de " + super.getPower() + " y alcanza una velocida máxima de " + super.getSpeed() + "km/h.";
+                   + "tiene una potencia de " + super.getPower() + " y alcanza una velocida máxima de " + super.getSpeed() + " km/h.";
         return ship;
     }
 
@@ -34,7 +34,7 @@ public class ShuttleVehicles extends Spaceship {
      */
     @Override
     public void menu(){
-        String menu = "Seleccione la misión que va a realizar el vehículo lanzadera\n"
+        String menu = "\nSeleccione la misión que va a realizar el vehículo lanzadera\n"
         + "1. Propulsar una nave espacial no tripulada\n"
         + "2. Propulsar una nave espacial tripulada";
 
@@ -45,7 +45,7 @@ public class ShuttleVehicles extends Spaceship {
      * Método abtracto sobreescrito de la clase Spaceship, asigna la misión de la nave.
      */  
     @Override
-    public String mission(int num) {
+    public void mission(int num) {
         String option = "";
         if(num == 1){
             option = "Propulsar una nave espacial no tripulada";
@@ -53,7 +53,7 @@ public class ShuttleVehicles extends Spaceship {
             option = "Propulsar una nave espacial tripulada";
         }
 
-        return option;
+        this.mission = option;
     }
 
     /**
