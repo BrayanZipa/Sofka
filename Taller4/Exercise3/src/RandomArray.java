@@ -2,6 +2,7 @@ import java.util.Random;
 
 /**
  * Clase que genera un Array con números reales aletorios y lo ordena mediante sus métodos.
+ * @author Brayan Zipa
  */
 public class RandomArray {
     /**

@@ -1,41 +1,20 @@
-import java.util.Scanner;
-
+/**
+ * Clase que prueba el funcionamiento de la clase PlanetarySystem.
+ * @author Brayan Zipa
+ */
 public class Main {
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        int option = 0, positions = 0;       
-        do{
-            System.out.println("Ingrese cuantos números quiere que tenga el Array aleatorio");
-            positions = keyboard.nextInt();
-            RandomArray random = new RandomArray(positions);
-            System.out.println("\nArray aleatorio generado\n");
-            random.showArray(random.getRandomArray());
 
-            System.out.println("\n\nElija la opción con la cual desea ordenar el Array aletorio generado\n");
-            System.out.println("1. Ordenar Array mediante el método burbuja\n2. Ordenar array mediante el método Quick Sort\n3. Salir");
-            option = keyboard.nextInt();
-            switch (option) {
-                case 1:
-                    System.out.println("\nMétodo Burbuja\n");
-                    random.showArray(random.bubbleMethod(random.getRandomArray()));
-                    System.out.println("\n");
-                    break;
+        PlanetarySystem sun = new PlanetarySystem("Sol", 1.989E30, 1410, 0, 0);
+        PlanetarySystem earth = new PlanetarySystem("Planeta Tierra", 5.972E24, 0, 0, 0);
+        PlanetarySystem moon = new PlanetarySystem("Luna", 7.349E22, 0, 0, 0);
+        
+        System.out.println(sun.toString() + "\n");
+        System.out.println(earth.toString() + "\n");
+        System.out.println(moon.toString() + "\n");
 
-                case 2:
-                    System.out.println("\nMétodo Quick Sort\n");
-                    random.showArray(random.quickSortMethod(random.getRandomArray(), 0, random.getRandomArray().length-1));
-                    System.out.println("\n");
-                    break;
-
-                case 3:
-                    System.out.println("Usted ha selecionado salir");
-                    break;
-                
-                default:
-                     System.out.println("\nOpción no válida\n");
-                    break;
-            }
-            
-        }while(option != 3);   
+        System.out.println("Atracción gravitatoria entre el sol y la tierra: " + sun.gravityAttraction(earth, 1.496E11) + "\n");
+        System.out.println("Atracción gravitatoria entre la tierra y la luna: " + earth.gravityAttraction(moon, 3.84E8) + "\n");
+        System.out.println("Atracción gravitatoria entre la luna y el sol: " + moon.gravityAttraction(sun, 1.492E11) + "\n");
     }  
 }
