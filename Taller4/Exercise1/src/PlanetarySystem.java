@@ -52,7 +52,11 @@ public class PlanetarySystem {
         this.diameter = diameter;
         this.distanceToSun = distanceToSun;
     }
-
+    
+    /**
+     * Devuelve un enunciado con las especificaciones principales del planeta o cuerpo celeste creado.
+     * @return Enunciado de las especificaciones del planeta o cuerpo celeste.
+     */
     public String toString(){
         String information = "Nombre: " + this.name + "\nIdentificador: " + this.id + "\nMasa: " + this.mass;
         return information ;
